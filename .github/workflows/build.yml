@@ -6,3 +6,11 @@ jobs:
     uses: ithundxr/workflows/.github/workflows/java-build.yml@main
     with:
       java-version: 21
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - run: mkdir staging && cp **/*.jar staging
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Package
+          path: staging
