@@ -10,7 +10,6 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - run: cp -r . staging
       - uses: actions/upload-artifact@v4
         with:
           name: Package
